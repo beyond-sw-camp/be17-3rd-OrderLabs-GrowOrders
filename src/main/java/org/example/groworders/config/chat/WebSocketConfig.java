@@ -1,3 +1,4 @@
+/*
 package org.example.groworders.config.chat;
 
 import lombok.RequiredArgsConstructor;
@@ -42,3 +43,4 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         registration.interceptors(authChannelInterceptor); // STOMP 메시지 들어오기 전 auth 처리
     }
 }
+*/

@@ -55,7 +55,7 @@ public class InventoryService {
 
 
     //재고 목록 조회
-    public FarmDto.FarmListResponse list(Long farmId, Integer page, Integer size) {
+    public FarmDto.FarmListResponse list(Long farmId) {
         Farm farm = cropRepository.findByIdWithCrop(farmId).orElseThrow(() -> BaseException.from(INVALID_FARM_INFO));
 
         String presignedUrl = farm.getFarmImage() != null ?

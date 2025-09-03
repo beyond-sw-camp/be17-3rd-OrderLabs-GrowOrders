@@ -4,7 +4,7 @@ import lombok.Getter;
 import org.example.groworders.common.model.BaseResponseStatus;
 
 @Getter
-public class BaseException extends RuntimeException {
+public class BaseException extends RuntimeException{
 
     private final BaseResponseStatus status;
 
@@ -23,4 +23,7 @@ public class BaseException extends RuntimeException {
         this.status = status;
     }
 
+    public static BaseException from(BaseResponseStatus status) {
+        return new BaseException(status, status.getMessage());
+    }
 }

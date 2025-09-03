@@ -2,7 +2,7 @@ package org.example.groworders.domain.farms.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.groworders.config.push.event.PushEvent;
+//import org.example.groworders.config.push.event.PushEvent;
 import org.example.groworders.domain.crops.repository.CropRepository;
 import org.example.groworders.domain.farms.model.dto.FarmDto;
 import org.example.groworders.domain.farms.model.entity.Farm;
@@ -42,7 +42,7 @@ public class FarmService {
         Farm farm = farmRepository.save(dto.toEntity(userId, filePath));
 
         // 테스트용: 농장 등록 시 농부에게 알림 전송
-        farmRegisterPush(farm);
+//        farmRegisterPush(farm);
         return FarmDto.FarmResponse.from(farm);
     }
 
@@ -84,6 +84,7 @@ public class FarmService {
         }).toList();
     }
 
+/*
     // 농장 등록 알림 발송
     public void farmRegisterPush(Farm farm) {
         publisher.publishEvent(PushEvent.builder()
@@ -95,4 +96,5 @@ public class FarmService {
                 .build()
         );
     }
+*/
 }
