@@ -2,7 +2,7 @@ package org.example.groworders.domain.payment.model.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.example.groworders.domain.crop.model.entity.Crop;
+import org.example.groworders.domain.crops.model.entity.Crop;
 import org.example.groworders.domain.orders.model.entity.CropOrderManagement;
 import org.example.groworders.domain.orders.model.entity.Order;
 import org.example.groworders.domain.users.model.entity.User;

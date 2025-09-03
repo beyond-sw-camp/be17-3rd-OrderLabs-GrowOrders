@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import static org.example.groworders.common.model.BaseResponseStatus.SUCCESS;
+
 /**
  * API 공통 응답 형식
  * @param <T> 응답 데이터 타입
@@ -26,8 +28,9 @@ public class BaseResponse<T> {
      */
     public static <T> BaseResponse<T> success(T data) {
         return BaseResponse.<T>builder()
-                .success(true)
-                .message("요청이 성공했습니다.")
+                .success(SUCCESS.isSuccess())
+                .message(SUCCESS.getMessage())
+                .code(SUCCESS.getCode())
                 .data(data)
                 .build();
     }
@@ -37,8 +40,9 @@ public class BaseResponse<T> {
      */
     public static <T> BaseResponse<T> successMessage(String message) {
         return BaseResponse.<T>builder()
-                .success(true)
-                .message(message)
+                .success(SUCCESS.isSuccess())
+                .message(SUCCESS.getMessage())
+                .code(SUCCESS.getCode())
                 .build();
     }
 
@@ -50,6 +54,16 @@ public class BaseResponse<T> {
                 .success(true)
                 .code(code)
                 .message(message)
+                .data(data)
+                .build();
+    }
+
+    /** 실패 응답 */
+    public static <T> BaseResponse<T> fail(BaseResponseStatus status, T data) {
+        return BaseResponse.<T>builder()
+                .success(status.isSuccess())
+                .message(status.getMessage())
+                .code(status.getCode())
                 .data(data)
                 .build();
     }

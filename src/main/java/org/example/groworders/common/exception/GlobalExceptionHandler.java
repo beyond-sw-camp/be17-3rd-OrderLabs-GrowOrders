@@ -26,6 +26,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<BaseResponse<?>> handleValidationException(MethodArgumentNotValidException e) {
         StringBuilder errorMessage = new StringBuilder();
+
         for (FieldError fieldError : e.getBindingResult().getFieldErrors()) {
             errorMessage.append(fieldError.getField())
                     .append(": ")
@@ -37,6 +38,7 @@ public class GlobalExceptionHandler {
                 BaseResponseStatus.METHOD_ARGUMENT_NOT_VALID.getCode(),
                 errorMessage.toString()
         );
+
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
@@ -44,10 +46,12 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<BaseResponse<?>> handleException(Exception e) {
         e.printStackTrace();
+
         BaseResponse<?> response = BaseResponse.fail(
                 BaseResponseStatus.SERVER_ERROR.getCode(),
                 BaseResponseStatus.SERVER_ERROR.getMessage()
         );
+
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
     }
 }

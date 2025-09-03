@@ -59,8 +59,8 @@ public class InventoryController {
             summary = "예측 재고 목록 조회",
             description = "parameter로 농장 아이디를 전달 받아 농부가 소유한 농장의 재고 목록 조회")
     @GetMapping("/list")
-    public ResponseEntity<BaseResponse<FarmDto.FarmListResponse>> list(Long farmId, Integer page, Integer size) {
-        FarmDto.FarmListResponse result = inventoryService.list(farmId, page, size);
+    public ResponseEntity<BaseResponse<FarmDto.FarmListResponse>> list(Long farmId) {
+        FarmDto.FarmListResponse result = inventoryService.list(farmId);
         return ResponseEntity.ok(BaseResponse.success(result));
     }
 

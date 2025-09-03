@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import lombok.*;
-import org.example.groworders.domain.crop.model.entity.Crop;
+import org.example.groworders.domain.crops.model.entity.Crop;
 import org.example.groworders.domain.orders.model.entity.Order;
 import org.example.groworders.domain.payment.model.entity.PaymentEntity;
 import org.example.groworders.domain.payment.model.entity.PaymentStatus;

@@ -6,6 +6,9 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import org.example.groworders.common.exception.*;
+import org.example.groworders.domain.farms.model.dto.FarmDto;
+import org.example.groworders.domain.farms.model.entity.Farm;
+import org.example.groworders.domain.farms.repository.FarmQueryRepository;
 import org.example.groworders.domain.users.model.dto.EmailVerify;
 import org.example.groworders.domain.users.model.dto.UserDto;
 import org.example.groworders.domain.users.model.entity.User;
@@ -24,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -32,6 +36,7 @@ import java.util.UUID;
 public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
+    private final FarmQueryRepository farmQueryRepository;
     private final JavaMailSender emailSender;
     private final EmailVerifyRepository emailVerifyRepository;
     private final S3UploadService s3UploadService;
@@ -74,7 +79,8 @@ public class UserService implements UserDetailsService {
                 ? s3PresignedUrlService.generatePresignedUrl(user.getProfileImage(), Duration.ofMinutes(60))
                 : null;
 
-        return UserDto.AuthUser.from(user, presignedUrl);
+        List<Farm> ownedFarm = farmQueryRepository.findByIdWithFarmWithCrop(user.getId());
+        return UserDto.AuthUser.from(user, presignedUrl, ownedFarm);
     }
 
     @Transactional

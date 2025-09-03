@@ -9,6 +9,7 @@ import org.example.groworders.domain.users.model.entity.Role;
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class JwtUtil {
@@ -18,7 +19,7 @@ public class JwtUtil {
 
     public static String generateToken(String email, Long id, Role role) {
 
-        Map<String, String> claims =  new HashMap<>();
+        Map<String, Object> claims =  new HashMap<>();
         claims.put("id", "" + id);
         claims.put("email", email);
         claims.put("role", role.name());
