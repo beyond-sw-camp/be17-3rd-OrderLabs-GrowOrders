@@ -1,6 +1,8 @@
 package org.example.groworders.domain.crops.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.*;
@@ -23,7 +25,7 @@ import java.util.Objects;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/crops")
-@Tag(name = "작물 관리 기능")
+@Tag(name = "작물 기능")
 public class CropController {
     private final CropService cropService;
     private final InventoryService inventoryService;
@@ -35,6 +37,11 @@ public class CropController {
             summary = "작물 등록과 동시에 재고 등록",
             description = "작물 타입, 작물 상태, 재배 면적, 파종 시작일, 재배 방식, 농장 아이디를 입력 받고 작물을 등록함과 동시에 예측 재고를 등록 한다."
     )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "작물 및 재고 등록 성공")
+
+    })
+
     @PostMapping("/register")
     public ResponseEntity<BaseResponse<Object>> register(@Valid @RequestBody CropDto.Register dto) throws ChangeSetPersister.NotFoundException {
         /** 작물 등록 */

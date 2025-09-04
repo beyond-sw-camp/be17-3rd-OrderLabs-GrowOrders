@@ -1,5 +1,6 @@
 package org.example.groworders.domain.crops.model.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import org.example.groworders.domain.crops.model.entity.Crop;
@@ -14,29 +15,37 @@ public class CropDto {
 
     //작물 등록 요청 데이터
     @Getter
+    @Schema(name = "CropRegisterRequest", description = "작물 등록 요청 DTO")
     public static class Register {
         @NotNull(message = "작물 종류는 필수 선택입니다.")
         @Pattern(message = "작물 종류를 확인 해주세요.", regexp = "^(?:토마토|딸기|파프리카)$")
+        @Schema(description = "작물 종류", example = "토마토")
         private String type;
 
         @NotNull(message = "작물 상태의 값을 올바르게 선택 해주세요.")
+        @Schema(description = "재배 상태", example = "양호")
         private CropStatus status;
 
         @PositiveOrZero //0이상 숫자
+        @Schema(description = "가격", example = "10000")
         private Integer price;
 
         @NotNull(message = "파종 시작일을 선택 해주세요.") //날짜 형식, 윤년까지 체크
+        @Schema(description = "파종시작일", example = "2025-09-04")
         private LocalDate sowingStartDate;
 
         @NotNull(message="재배 면적을 입력 해주세요.")
+        @Schema(description = "재배면적", example = "320")
         @PositiveOrZero(message = "면적은 0 이상 입력해주세요.") //0이상 숫자
         private Integer area;
 
         @NotNull(message="재배 방식을 선택 해주세요.")
+        @Schema(description = "재배방식", example = "비닐")
         @Pattern(message = "재배 방식을 확인 해주세요.", regexp = "^(?:비닐|유리)$")
         private String cultivateType;
 
         @NotNull(message = "농장은 필수 선택입니다.")
+        @Schema(description = "농장 Id", example = "233")
         @Positive(message = "농장을 확인 해주세요.") //1이상 숫자
         private Long farmId;
 

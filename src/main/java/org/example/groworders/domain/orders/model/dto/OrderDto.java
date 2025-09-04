@@ -1,5 +1,6 @@
 package org.example.groworders.domain.orders.model.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.example.groworders.domain.cart.model.dto.CartDto;
 import org.example.groworders.domain.orders.model.entity.Order;
@@ -52,11 +53,17 @@ public class OrderDto {
     @AllArgsConstructor
     @Builder
     public static class Confirm {
+        @Schema(description = "우편번호", example = "39021")
         private String postCode;
+        @Schema(description = "주소", example = "충청북도 증평읍")
         private String address;
+        @Schema(description = "세부 주소", example = "삼일로 82")
         private String detailAddress;
+        @Schema(description = "주문자 성명", example = "심시경")
         private String ordererName;
+        @Schema(description = "전화번호", example = "010-3258-3122")
         private String phoneNumber;
+        @Schema(description = "결제수단", example = "카카오 결제")
         private PayMethod payMethod;
 
         // Entity 변환 메서드

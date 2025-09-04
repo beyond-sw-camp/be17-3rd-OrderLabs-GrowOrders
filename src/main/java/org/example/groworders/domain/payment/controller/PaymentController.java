@@ -1,5 +1,9 @@
 package org.example.groworders.domain.payment.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +24,7 @@ import java.util.List;
 @RequestMapping("/payment")
 @RequiredArgsConstructor
 @Slf4j
+@Tag(name = "결제 기능")
 public class PaymentController {
 
     private final PaymentService paymentService;
@@ -27,6 +32,13 @@ public class PaymentController {
     private final CartRepository cartRepository;
     private final OrderRepository orderRepository;
 
+    @Operation(
+            summary = "결제 검증 기능",
+            description = "결제 검증을 통해 성공된 것 만 주문 생성 ")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "결제 검증 성공")
+
+    })
     @PostMapping("/validation")
     public ResponseEntity<BaseResponse<Boolean>> validateOrder(@RequestBody PaymentDto.Validation dto) throws SQLException, IOException {
         boolean ok = paymentService.validation(dto);
