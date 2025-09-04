@@ -92,79 +92,7 @@ Pinia에 저장된 로그인 정보를 이용하여 Navigation Guards를 통해 
 <img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
 <img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
 </div>
-
-
 <br><br>
-
-## 🖥️ 화면 설계서
-<br>
-
-[Figma 화면 설계](https://www.figma.com/design/b62xD9jx6Nby2e4xa7ylJZ/%EC%A0%9C%EB%AA%A9-%EC%97%86%EC%9D%8C?node-id=0-1&t=51nZR2QNFvuL1JE2-1)
-<br><br>
-
-## ▶️ 프로젝트 시연
-
-### 🔐 로그인
-
-#### - 로그인 시연
-<img src="https://github.com/user-attachments/assets/8463fe4d-4618-4048-ac10-96c5ea6921c5">
-<br>
-
-#### - 구매자 로그인 시연
-
-<img src="https://github.com/user-attachments/assets/359eb445-d56e-4a13-b823-9fb1ac9d9999">
-<br><br>
-
-### 💳 회원가입
-
-
-
-#### - 회원가입 시연
-<br>
-<img src="https://github.com/user-attachments/assets/645233b7-4288-4ae3-b41f-897e4d76c38c">
-<br><br>
-
-
-### 👨‍🌾 농부
-
-<br>
-
-### 🌾 농장 등록
-
-
-##### - 농장등록 시연
-
-<img src="https://github.com/user-attachments/assets/c9d14ac4-57da-498a-b242-1767bf3044a8">
-<br><br>
-
-### 🍅 상품 등록
-
-
-##### - 상품등록 시연
-<br>
-<img src="https://github.com/user-attachments/assets/2b6f472e-f5b5-45a5-9162-67b72af5a5cb">
-<br><br>
-
-#### 📊 재고 관리
-
-#### - 재고관리 시연
-<br>
-<img src="https://github.com/user-attachments/assets/ada59d76-cdae-4358-bb9b-38461df98178">
-<br>
-<br>
-
-### 🛒 주문자
-
-#### - 주문관리 시연
-<br>
-<img src="https://github.com/user-attachments/assets/1c5aab15-2815-4f1f-8ad0-7f042afa14e5">
-<br>
-
-### 🔍 농장 검색
-#### - 농장 검색 시연
-<br>
-<img src="https://github.com/user-attachments/assets/86f0fb22-42fd-4440-a8cf-f82a97acb902">
-<br>
 
 ## ⚾ 시스템 아키텍처
 <br>
@@ -181,6 +109,13 @@ Pinia에 저장된 로그인 정보를 이용하여 Navigation Guards를 통해 
 <br><br>
 
 ## 📊 성능 테스트
+<br>
+
 [ 기능 테스트 및 성능 테스트 후 개선 사항](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/3.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B0%8F-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EC%84%A0-%EC%82%AC%ED%95%AD#%EC%9E%AC%EA%B3%A0-%EB%AA%A9%EB%A1%9D-%EC%A1%B0%ED%9A%8C)
 
+<br><br>
 
+## 🔧 swagger 
+<br>
+
+[swagger UI 링크](http://localhost:8080/swagger-ui/index.html#/)
