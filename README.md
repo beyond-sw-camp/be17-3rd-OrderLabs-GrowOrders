@@ -169,13 +169,14 @@ Pinia에 저장된 로그인 정보를 이용하여 Navigation Guards를 통해 
 ## 🕵️ 시스템 아키텍처
 <br>
 
-[시스템 아키텍처]([https://www.be17.site](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/1.-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98#%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98---%EB%AA%A8%EB%86%80%EB%A6%AC%EC%8B%9D))
+[시스템 아키텍처](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/1.-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98#%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98---%EB%AA%A8%EB%86%80%EB%A6%AC%EC%8B%9D)
 
 <br><br>
 
 ## 🕵️ 소프트웨어 아키텍처
 <br>
 
-[소프트웨어 아키텍처]([https://www.be17.site](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/2.--%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98))
+[소프트웨어 아키텍처](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/2.--%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98)
 
 <br><br>
+
