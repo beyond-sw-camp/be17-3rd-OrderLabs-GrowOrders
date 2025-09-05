@@ -30,8 +30,8 @@ public class VapidKeyGen {
         ECPrivateKey priv = (ECPrivateKey) kp.getPrivate();
         String privateKeyBase64Url = base64Url(toFixedLength(priv.getS(), 32));
 
-        log.debug(publicKeyBase64Url);
-        log.debug(privateKeyBase64Url);
+        System.out.println("VAPID_PUBLIC_KEY=" + publicKeyBase64Url);
+        System.out.println("VAPID_PRIVATE_KEY=" + privateKeyBase64Url);
     }
 
     private static String base64Url(byte[] b) {

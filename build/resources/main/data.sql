@@ -3,8 +3,8 @@ DROP TABLE IF EXISTS prediction;
 
 -- 비닐하우스 테이블
 CREATE TABLE IF NOT EXISTS prediction (
-    id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    crop_name VARCHAR(20) NOT NULL,          -- 작물명
+                                          id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                                          crop_name VARCHAR(20) NOT NULL,          -- 작물명
     cultivation_type VARCHAR(20) NOT NULL,   -- 재배방식
     growth_stage CHAR(2) NOT NULL,           -- 월 ('07', '08', ...)
 
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS prediction (
 
     weekly_avg_humidity_min DECIMAL(4,1),    -- 주간 평균습도 최소
     weekly_avg_humidity_max DECIMAL(4,1)     -- 주간 평균습도 최대
-);
+    );
 
 
 INSERT INTO prediction (
@@ -465,4 +465,3 @@ VALUES
     ('토마토', '유리', '12', 750, 960, 3.5, 8.8, 2.6, 80.3, 82.6),
     ('토마토', '유리', '12', 750, 960, 3.5, 8.8, 2.6, 80.3, 82.6),
     ('토마토', '유리', '12', 750, 960, 3.5, 8.8, 2.6, 84.6, 87.1);
-

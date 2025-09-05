@@ -30,6 +30,8 @@ public class QUser extends EntityPathBase<User> {
 
     public final BooleanPath enabled = createBoolean("enabled");
 
+    public final ListPath<org.example.groworders.domain.farms.model.entity.Farm, org.example.groworders.domain.farms.model.entity.QFarm> farmList = this.<org.example.groworders.domain.farms.model.entity.Farm, org.example.groworders.domain.farms.model.entity.QFarm>createList("farmList", org.example.groworders.domain.farms.model.entity.Farm.class, org.example.groworders.domain.farms.model.entity.QFarm.class, PathInits.DIRECT2);
+
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final StringPath name = createString("name");
@@ -39,6 +41,8 @@ public class QUser extends EntityPathBase<User> {
     public final StringPath phoneNumber = createString("phoneNumber");
 
     public final StringPath profileImage = createString("profileImage");
+
+    public final ListPath<org.example.groworders.config.push.model.entity.PushHistory, org.example.groworders.config.push.model.entity.QPushHistory> pushHistoryList = this.<org.example.groworders.config.push.model.entity.PushHistory, org.example.groworders.config.push.model.entity.QPushHistory>createList("pushHistoryList", org.example.groworders.config.push.model.entity.PushHistory.class, org.example.groworders.config.push.model.entity.QPushHistory.class, PathInits.DIRECT2);
 
     public final EnumPath<Role> role = createEnum("role", Role.class);
 

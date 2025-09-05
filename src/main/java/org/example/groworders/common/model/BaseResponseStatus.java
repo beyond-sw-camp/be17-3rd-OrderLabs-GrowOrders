@@ -1,6 +1,6 @@
 package org.example.groworders.common.model;
 
-import lombok.Getter;
+import lombok.*;
 
 /**
  * 에러 코드 관리
@@ -29,13 +29,15 @@ public enum BaseResponseStatus {
     INVALID_USER_PASSWORD(false,20009,"비밀번호가 일치하지 않습니다."),
     INVALID_USER_EMAIL(false,20010,"이메일 정보가 잘못되었습니다."),
     INVALID_EMAIL_RESET_TIMEOUT(false,20011,"이메일 변경 링크가 만료되었습니다. 다시 시도해주세요."),
-    INVALID_CROP_INFO(false, 20012, "작물을 확인 해주세요."),
-    INVALID_FARM_INFO(false,20013, "농장을 확인 해주세요."),
     FILE_UPLOAD_ERROR(false, 20012, "파일 업로드 실패"),
     PROFILE_IMAGE_UPLOAD_ERROR(false, 20013, "프로필 이미지 업로드 실패"),
     EMAIL_VERIFY_FAIL(false, 20014, "이메일 검증 실패"),
     METHOD_ARGUMENT_NOT_VALID(false, 20015, "MethodArgumentNotValid 오류"),
+    INVALID_CROP_INFO(false, 20016, "작물을 확인 해주세요."),
+    INVALID_FARM_INFO(false,20017, "농장을 확인 해주세요."),
 
+
+    REQUIRED_FIELD_ERROR(false, 20016, "폼 필수 입력 내용 미기입 오류"),
 
 
     /**

@@ -13,26 +13,25 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Farm {
-    @Id // nullable = false 포함
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false)
     private String name;
 
     @Column(nullable = false)
     private String region;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false)
     private String address;
 
-    @Column(nullable = false) // 허용 범위는 validation에서 처리
+    @Column(nullable = false)
     private Integer size;
 
-    @Column(length = 100) // 농장 소개글 생략 가능
+    @Column(nullable = false)
     private String contents;
 
-    // 농장 사진 생략 가능
     private String farmImage;
 
     // 다대일 (farm:user)

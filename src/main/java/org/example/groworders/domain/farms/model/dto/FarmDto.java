@@ -1,14 +1,14 @@
 package org.example.groworders.domain.farms.model.dto;
 
-import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import org.example.groworders.domain.crops.model.dto.CropDto;
 import org.example.groworders.domain.crops.model.entity.Crop;
 import org.example.groworders.domain.farms.model.entity.Farm;
 import org.example.groworders.domain.users.model.entity.User;
-import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,25 +19,20 @@ public class FarmDto {
     public static class Register {
         @NotBlank(message = "농장 이름를 입력해주세요.")
         @Size(max = 20)
-        @Schema(description = "농장이름", example = "김가네 농장")
         private String name;
 
         @NotBlank(message = "농장 지역은 필수 선택입니다.")
-        @Schema(description = "지역", example = "구미")
         private String region;
 
         @NotBlank(message = "농장 주소를 입력해주세요.")
-        @Schema(description = "주소", example = "경상북도 구미시 도봉로 5길 42")
         @Size(max = 50)
         private String address;
 
         @NotNull(message = "농장 면적을 입력해주세요.")
-        @Schema(description = "농장 면적", example = "300")
         @Min(value = 10)
         private Integer size;
 
         @NotBlank(message = "농장 설명을 입력해주세요.")
-        @Schema(description = "농장 설명", example = "정성스러운 마음으로 키워내겠습니다")
         @Size(max = 100)
         private String contents;
 
@@ -213,21 +208,13 @@ public class FarmDto {
     @Getter
     @Builder
     public static class FarmResponse {
-        @Schema(description = "사용자 id", example = "1313")
         private Long user_id;
-        @Schema(description = "농장목록 id", example = "15")
         private Long id;
-        @Schema(description = "이름", example = "김가네 농장")
         private String name;
-        @Schema(description = "지역", example = "서울")
         private String region;
-        @Schema(description = "주소", example = "경상북도 경산시 진량읍")
         private String address;
-        @Schema(description = "재배면적", example = "300")
         private Integer size;
-        @Schema(description = "농장 설명", example = "정성스러운 마음으로 키워내겠습니다")
         private String contents;
-        @Schema(description = "농장 이미지", example = "이미지 파일")
         private String farmImage;
 
         public static FarmResponse from(Farm entity) {
@@ -240,6 +227,18 @@ public class FarmDto {
                     .size(entity.getSize())
                     .contents(entity.getContents())
                     .farmImage(entity.getFarmImage())
+                    .build();
+        }
+    }
+
+    @Getter
+    @Builder
+    public static class FarmRegisterResponse {
+        private List<FarmDto.OwnedFarm> ownedFarm;
+
+        public static  FarmRegisterResponse from(List<Farm> entity) {
+            return FarmRegisterResponse.builder()
+                    .ownedFarm(entity.stream().map(FarmDto.OwnedFarm::from).toList())
                     .build();
         }
     }
@@ -288,7 +287,12 @@ public class FarmDto {
             return OwnedFarm.builder()
                     .id(entity.getId())
                     .name(entity.getName())
-                    .cropType(entity.getCropList().stream().map(Crop::getType).distinct().toList()) //Crop Entity에서 Type 중복 제거하고 가져오기
+                    .cropType(Optional.ofNullable(entity.getCropList())
+                            .orElseGet(Collections::emptyList)
+                            .stream()
+                            .map(Crop::getType)
+                            .distinct()
+                            .toList()) //Crop Entity에서 Type 중복 제거하고 가져오기
                     .build();
         }
     }

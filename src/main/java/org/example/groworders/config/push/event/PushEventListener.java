@@ -44,12 +44,23 @@ public class PushEventListener {
         pushHistoryService.write(event);
     }
 
+//    private String buildPayload(PushEvent event) {
+//        var node = mapper.createObjectNode();
+//        node.put("title", event.getTitle());
+//        node.put("message", event.getMessage());
+//        node.put("icon", event.getIcon());
+//        node.put("url", event.getUrl());
+//        return node.toString();
+//    }
+
     private String buildPayload(PushEvent event) {
         var node = mapper.createObjectNode();
-        node.put("title", event.getTitle());
-        node.put("message", event.getMessage());
-        node.put("icon", event.getIcon());
-        node.put("url", event.getUrl());
-        return node.toString();
+        if (event.getTitle() != null)   node.put("title", event.getTitle());
+        if (event.getMessage() != null) node.put("body",  event.getMessage()); // SW 표준 body
+        if (event.getIcon() != null)    node.put("icon",  event.getIcon());
+        if (event.getUrl() != null)     node.put("url",   event.getUrl());
+
+        String json = node.toString();
+        return (json == null) ? "" : json; // ← 최종 방어
     }
 }

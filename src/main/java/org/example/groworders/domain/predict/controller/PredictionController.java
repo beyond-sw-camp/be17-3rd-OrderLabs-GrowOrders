@@ -1,8 +1,6 @@
 package org.example.groworders.domain.predict.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.example.groworders.domain.predict.model.dto.PredictionDto;
@@ -31,10 +29,6 @@ public class PredictionController {
             summary = "하루 생산량 예측 기능",
             description = "기상청 API를 통해 날씨를 입력받고 오차를 통해 생산량 예측"
     )
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "하루 생산량 예측 기능 성공")
-
-    })
     @PostMapping("/daily")
     public ResponseEntity<PredictionDto.Response> predictDaily(@RequestBody PredictionDto.RequestDaily request) {
         try {
@@ -61,10 +55,6 @@ public class PredictionController {
             summary = "연간 생산량 예측 기능",
             description = "전날 생산량이 오늘의 생산량에 영향을 주는 모델"
     )
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "연간 생산량 예측 기능 성공"),
-
-    })
     @PostMapping("/continuous")
     public ResponseEntity<List<Double>> predictContinuous(@RequestBody PredictionDto.RequestYearly request) {
         try {
