@@ -99,7 +99,7 @@ PW: Qwer1234!
 ## 🔧 swagger 
 <br>
 
-[swagger UI 링크](http://3.35.8.210:8080/swagger-ui/index.html)
+[swagger UI 링크](https://www.be17.site/api/swagger-ui/swagger-ui/index.html)
 
 <br><br>
 
@@ -153,3 +153,4 @@ PW: Qwer1234!
 
 
  
+
