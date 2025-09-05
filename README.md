@@ -92,7 +92,7 @@ PW: Qwer1234!
 ## 📊 성능 테스트
 <br>
 
-[ 기능 테스트 및 성능 테스트 후 개선 사항](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/3.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B0%8F-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EC%84%A0-%EC%82%AC%ED%95%AD#%EC%9E%AC%EA%B3%A0-%EB%AA%A9%EB%A1%9D-%EC%A1%B0%ED%9A%8C)
+[성능 테스트 후 개선 사항](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/3.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B0%8F-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EC%84%A0-%EC%82%AC%ED%95%AD#%EC%9E%AC%EA%B3%A0-%EB%AA%A9%EB%A1%9D-%EC%A1%B0%ED%9A%8C)
 
 <br><br>
 
@@ -104,6 +104,12 @@ PW: Qwer1234!
 <br><br>
 
 ## 📺 기능 테스트
+<br>
+
+[기능 테스트](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/4.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8)
+
+<br>
+
 ### 1. 농부 기능 테스트
 #### 🍅 회원가입
 <img src="https://github.com/user-attachments/assets/68af399d-4dd7-4942-9795-2e1500f11c94b">
@@ -153,5 +159,6 @@ PW: Qwer1234!
 
 
  
+
 
 
