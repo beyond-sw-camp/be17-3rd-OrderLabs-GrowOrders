@@ -1,7 +1,7 @@
 <img width="3312" height="1107" alt="Image" src="https://github.com/user-attachments/assets/319894c4-7d18-4be0-afa1-598fb2517989" />
 <br>
 
-## 🧑🏻‍🌾 Front-end 프로젝트 소개
+## 🍀 프로젝트 소개
 <br>
 <div>
   <h3 align="center">
@@ -153,4 +153,5 @@ PW: Qwer1234!
 
 
  
+
 
