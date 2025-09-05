@@ -1,9 +1,6 @@
 package org.example.groworders.domain.inventories.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.*;
@@ -21,7 +18,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/inventories")
-@Tag(name = "재고 기능")
+@Tag(name = "재고 관리 기능")
 public class InventoryController {
     private final InventoryService inventoryService;
 
@@ -41,10 +38,6 @@ public class InventoryController {
     @Operation(
             summary = "예측 재고 수정",
             description = "예측 재고 생산량, 예측 수확일, 파종 시작일을 입력 받고 농부의 각 농장에 있는 작물에 대한 예측 재고 수정한다.")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "재고 수정 성공")
-
-    })
     @PostMapping("/update")
     public ResponseEntity<BaseResponse<Object>> update(@Valid @RequestBody InventoryDto.Update dto) {
         inventoryService.update(dto);
@@ -55,12 +48,8 @@ public class InventoryController {
     @Operation(
             summary = "예측 재고 상세 조회",
             description = "parameter로 작물 및 재고 아이디를 전달 받아 예측 재고를 상세 조회")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "재고 상세 조회 성공")
-
-    })
     @GetMapping("/details")
-    public ResponseEntity<BaseResponse<CropDto.CropResponse>> details(@Parameter(description = "작물 ID", required = true, example = "1031")Long cropId) {
+    public ResponseEntity<BaseResponse<CropDto.CropResponse>> details(Long cropId) {
         CropDto.CropResponse result = inventoryService.details(cropId);
         return ResponseEntity.ok(BaseResponse.success(result));
     }
@@ -69,13 +58,9 @@ public class InventoryController {
     @Operation(
             summary = "예측 재고 목록 조회",
             description = "parameter로 농장 아이디를 전달 받아 농부가 소유한 농장의 재고 목록 조회")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "재고 목록 조회 성공")
-
-    })
     @GetMapping("/list")
-    public ResponseEntity<BaseResponse<FarmDto.FarmListResponse>> list(@Parameter(description = "농장 ID", required = true, example = "1051")Long farmId) {
-        FarmDto.FarmListResponse result = inventoryService.list(farmId);
+    public ResponseEntity<BaseResponse<FarmDto.FarmListResponse>> list(Long farmId, Integer page, Integer size) {
+        FarmDto.FarmListResponse result = inventoryService.list(farmId, page, size);
         return ResponseEntity.ok(BaseResponse.success(result));
     }
 
@@ -83,12 +68,8 @@ public class InventoryController {
     @Operation(
             summary = "예측 재고 목록 필터 조회",
             description = "작물 종류, 작물 상태, 판매 상태, 정렬 기준 를 각각 선택할 수 있으며 해당하는 재고만 조회")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "재고 검색 조회 성공")
-
-    })
     @GetMapping("/search")
-    public ResponseEntity<BaseResponse<List<CropDto.CropResponse>>> search(@Parameter(description = "농장 ID", required = true, example = "103112")Long farmId, CropDto.Search dto) {
+    public ResponseEntity<BaseResponse<List<CropDto.CropResponse>>> search(Long farmId, CropDto.Search dto) {
         List<CropDto.CropResponse> result = inventoryService.search(farmId, dto);
         return ResponseEntity.ok(BaseResponse.success(result));
     }

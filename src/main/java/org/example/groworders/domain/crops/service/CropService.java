@@ -6,6 +6,7 @@ import org.example.groworders.domain.crops.model.dto.CropDto;
 import org.example.groworders.domain.crops.model.entity.Crop;
 import org.example.groworders.domain.crops.repository.CropRepository;
 import org.example.groworders.domain.farms.model.entity.Farm;
+import org.example.groworders.domain.farms.repository.FarmQueryRepository;
 import org.example.groworders.domain.farms.repository.FarmRepository;
 import org.example.groworders.domain.inventories.model.dto.InventoryDto;
 import org.example.groworders.domain.predict.model.dto.PredictionDto;
@@ -44,7 +45,7 @@ public class CropService {
     //예측 생산량을 재고로 등록할 DTO로 가공
     public InventoryDto.Register transform(Crop crop, PredictionDto.Response prediction) {
 
-        Integer expectedQuantity = (int) Math.floor(Double.parseDouble(prediction.getPredictedYield())); //예측 수확량
+        Integer expectedQuantity = prediction.getPredictedYield() != null ?(int) Math.floor(Double.parseDouble(prediction.getPredictedYield())) : 0; //예측 수확량
 
         return InventoryDto.Register.builder()
                 .expectedHarvestDate(crop.getSowingStartDate().plusMonths(6)) //파종 시작일 + 6개월

@@ -8,6 +8,7 @@ import org.example.groworders.domain.crops.repository.CropQueryRepository;
 import org.example.groworders.domain.crops.repository.CropRepository;
 import org.example.groworders.domain.farms.model.dto.FarmDto;
 import org.example.groworders.domain.farms.model.entity.Farm;
+import org.example.groworders.domain.farms.repository.FarmQueryRepository;
 import org.example.groworders.domain.farms.repository.FarmRepository;
 import org.example.groworders.domain.inventories.model.dto.InventoryDto;
 import org.example.groworders.domain.users.service.S3PresignedUrlService;
@@ -24,17 +25,22 @@ import static org.example.groworders.common.model.BaseResponseStatus.INVALID_FAR
 @Service
 @RequiredArgsConstructor
 public class InventoryService {
+    private final FarmQueryRepository farmQueryRepository;
     private final CropQueryRepository cropQueryRepository;
     private final CropRepository cropRepository;
     private final S3PresignedUrlService s3PresignedUrlService;
 
     //재고 등록
-    public void save(InventoryDto.Register dto) {
+    public InventoryDto.InventoryResponse save(InventoryDto.Register dto, Long userId) {
         Crop crop = cropRepository.findById(dto.getCropId()).orElseThrow(()-> BaseException.from(INVALID_CROP_INFO));
 
         //작물이 존재하면 예측 재고 등록
         crop.registerInventory(dto);
         cropRepository.save(crop);
+
+        //농장들에 등록한 작물 응답
+        List<Farm> ownedFarm = farmQueryRepository.findByIdWithFarmWithCrop(userId);
+        return InventoryDto.InventoryResponse.from(ownedFarm);
     }
 
     //재고 수정
@@ -55,7 +61,7 @@ public class InventoryService {
 
 
     //재고 목록 조회
-    public FarmDto.FarmListResponse list(Long farmId) {
+    public FarmDto.FarmListResponse list(Long farmId, Integer page, Integer size) {
         Farm farm = cropRepository.findByIdWithCrop(farmId).orElseThrow(() -> BaseException.from(INVALID_FARM_INFO));
 
         String presignedUrl = farm.getFarmImage() != null ?

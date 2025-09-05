@@ -57,7 +57,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/**", "/user/signup").permitAll()
                         .requestMatchers("/test/**").hasRole("USER")
                         .requestMatchers("/order/**", "/payment/**", "/cart/**", "/ws/**").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/crops/**", "/inventories/**", "/farms/**").permitAll()
+                        .anyRequest().permitAll()
                 )
 
                 // CORS / CSRF / 기타 설정
