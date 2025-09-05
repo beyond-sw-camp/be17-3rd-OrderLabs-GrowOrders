@@ -1,7 +1,7 @@
 <img width="3312" height="1107" alt="Image" src="https://github.com/user-attachments/assets/319894c4-7d18-4be0-afa1-598fb2517989" />
 <br>
 
-## 🧑🏻‍🌾 Front-end 프로젝트 소개
+## 🍀 프로젝트 소개
 <br>
 <div>
   <h3 align="center">
@@ -24,46 +24,27 @@
 
 <br><br>
 
-#### - 주요 기술 설명 및 화면
-
-<img width="2240" height="1260" alt="Image" src="https://github.com/user-attachments/assets/5b98c04a-86e4-48fd-a941-84c03aaba39d" />
-
-
-<br><br>
-
-Pinia에 저장된 로그인 정보를 이용하여 Navigation Guards를 통해 첫 화면으로 이동합니다. <br> 저장된 정보가 없다면 로그인 화면으로 이동합니다. 로그인은 이메일 형식과 회원 유형을 기입하기만 하면 다음 화면으로 진행됩니다.<br>
-또한 EncryptStorage를 사용해 로그인한 사용자를 암호화 하여 보안에 신경썼습니다.<br> 
-
-<br><br>
-
-#### - Pinia와 EncryptStorage 사용
-
-<img width="1912" height="883" alt="Image" src="https://github.com/user-attachments/assets/a19dd806-cf15-4e60-b0fd-e9c538e63584" />
-
-<br><br>
-
-#### - 농부로 로그인 했을 때
-
-<img width="1887" height="883" alt="Image" src="https://github.com/user-attachments/assets/b9cdac43-c625-438c-aac1-94a981de9a39" />
-
-
-<br><br>
-
-#### - 구매자로 로그인 했을 때
-
-<img width="1887" height="907" alt="Image" src="https://github.com/user-attachments/assets/125bd5d4-a311-46f9-8808-654f7fb7b256" />
-
-
-<br><br>
-
-
 ## 🔗 도메인 주소
 <br>
 
 [GrowOrders 도메인 주소](https://www.be17.site)
 
-<br><br>
+<br>
 
+👨‍🌾 농부 로그인 계정
+```
+ID: test@example.com
+PW: Qwer1234!
+회원 유형 농부 선택
+```
+💳 구매자 로그인 계정
+```
+ID: test2@example.com
+PW: Qwer1234!
+회원 유형 구매자 선택
+```
+
+<br><br>
 
 ## 🕵️ 팀원 소개
 <br>
@@ -111,16 +92,73 @@ Pinia에 저장된 로그인 정보를 이용하여 Navigation Guards를 통해 
 ## 📊 성능 테스트
 <br>
 
-[ 기능 테스트 및 성능 테스트 후 개선 사항](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/3.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B0%8F-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EC%84%A0-%EC%82%AC%ED%95%AD#%EC%9E%AC%EA%B3%A0-%EB%AA%A9%EB%A1%9D-%EC%A1%B0%ED%9A%8C)
+[성능 테스트 후 개선 사항](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/3.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B0%8F-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EC%84%A0-%EC%82%AC%ED%95%AD#%EC%9E%AC%EA%B3%A0-%EB%AA%A9%EB%A1%9D-%EC%A1%B0%ED%9A%8C)
 
 <br><br>
 
 ## 🔧 swagger 
 <br>
 
-[swagger UI 링크](http://3.35.8.210:8080/swagger-ui/index.html)
+[swagger UI 링크](https://www.be17.site/api/swagger-ui/swagger-ui/index.html)
 
 <br><br>
+
+## 📺 기능 테스트
+<br>
+
+[기능 테스트](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/4.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8)
+
+<br>
+
+### 1. 농부 기능 테스트
+#### 🍅 회원가입
+<img src="https://github.com/user-attachments/assets/68af399d-4dd7-4942-9795-2e1500f11c94b">
+<br><br>
+
+#### 🍅 농부 로그인
+<img src="https://github.com/user-attachments/assets/5683072b-5ea9-41f2-988e-0f5706a78411">
+<br><br>
+
+#### 🍅 농장 등록
+<img src="https://github.com/user-attachments/assets/8d1b088a-11bc-40cb-94d7-bf347a1cc4be">
+<br><br>
+
+#### 🍅 작물 등록
+<img src="https://github.com/user-attachments/assets/d81aebf1-2a1f-4b62-9a25-92c67c468c35">
+<br><br>
+
+#### 🍅 재고 관리
+<img src="https://github.com/user-attachments/assets/29b0fc0e-8268-4275-a658-3c21e5ea1a05">
+<br><br><br>
+
+### 2. 구매자 기능 테스트
+#### 💳 구매자 로그인
+<img src="https://github.com/user-attachments/assets/e6d6110f-becf-4552-b909-3bf40c440ddb">
+<br><br>
+
+#### 💳 주문 관리
+<img src="https://github.com/user-attachments/assets/6c2af5a5-879d-4cb1-abce-d3d123e9b8fa">
+<br><br>
+
+#### 💳 상품 목록
+<img src="https://github.com/user-attachments/assets/512869d4-9c90-4648-99e9-bc6d124d3890">
+<br><br>
+
+#### 💳 주문
+<img src="https://github.com/user-attachments/assets/5e41a1f7-e3be-43c5-8a25-c20715f7eec5">
+<br><br>
+
+#### 💳 장바구니 담기
+<img src="https://github.com/user-attachments/assets/c4aa2df4-cc6a-42f6-9ed6-9f7c11082eda">
+<br><br>
+
+#### 💳 주문 관리
+<img src="https://github.com/user-attachments/assets/49521164-27d7-4654-9793-4ca9ed519347">
+<br><br> 
+
+
+
+ 
 
 
 
