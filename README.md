@@ -27,7 +27,11 @@
 ## 🔗 도메인 주소
 <br>
 
-[GrowOrders 도메인 주소](https://www.be17.site)
+[GrowOrders 도메인 주소](https://www.be17.site/signin)
+
+<br>
+
+주의 : 회원 유형이 다르면 로그인이 되지 않음 !
 
 <br>
 
@@ -35,13 +39,13 @@
 ```
 ID: test@example.com
 PW: Qwer1234!
-회원 유형 농부 선택
+회원 유형 `농부` 선택
 ```
 💳 구매자 로그인 계정
 ```
 ID: test2@example.com
 PW: Qwer1234!
-회원 유형 구매자 선택
+회원 유형 `구매자` 선택
 ```
 
 <br><br>
@@ -62,6 +66,9 @@ PW: Qwer1234!
 ## 🛠️ 기술 스택
 <br>
 <div>
+<img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" />
+<img src="https://img.shields.io/badge/Spring%20Security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white" />
+<img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white" />
 <img src="https://img.shields.io/badge/vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white">
 <img src="https://img.shields.io/badge/PINIA-FFE801?style=for-the-badge">
 <img src="https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=nginx&logoColor=white">
@@ -108,14 +115,20 @@ PW: Qwer1234!
 
 [기능 테스트](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/4.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8)
 
+<br><br>
+
+## 🚀 추후 아키텍쳐 개선 예정 (MSA; 헥사고날)
+
+![헥사고날](https://github.com/user-attachments/assets/3f41c080-9f93-46c3-9492-32af3834f32e)
+
 <br>
 
 ### 1. 농부 기능 테스트
-#### 🍅 회원가입
+#### ✍️ 회원가입
 <img src="https://github.com/user-attachments/assets/68af399d-4dd7-4942-9795-2e1500f11c94b">
 <br><br>
 
-#### 🍅 농부 로그인
+#### 🧑‍🌾 농부 로그인
 <img src="https://github.com/user-attachments/assets/5683072b-5ea9-41f2-988e-0f5706a78411">
 <br><br>
 
@@ -123,11 +136,11 @@ PW: Qwer1234!
 <img src="https://github.com/user-attachments/assets/8d1b088a-11bc-40cb-94d7-bf347a1cc4be">
 <br><br>
 
-#### 🍅 작물 등록
+#### 🌾 작물 등록
 <img src="https://github.com/user-attachments/assets/d81aebf1-2a1f-4b62-9a25-92c67c468c35">
 <br><br>
 
-#### 🍅 재고 관리
+#### 💼 재고 관리
 <img src="https://github.com/user-attachments/assets/29b0fc0e-8268-4275-a658-3c21e5ea1a05">
 <br><br><br>
 
@@ -136,19 +149,19 @@ PW: Qwer1234!
 <img src="https://github.com/user-attachments/assets/e6d6110f-becf-4552-b909-3bf40c440ddb">
 <br><br>
 
-#### 💳 주문 관리
+#### 🧾 주문 관리
 <img src="https://github.com/user-attachments/assets/6c2af5a5-879d-4cb1-abce-d3d123e9b8fa">
 <br><br>
 
-#### 💳 상품 목록
+#### 🎁 상품 목록
 <img src="https://github.com/user-attachments/assets/512869d4-9c90-4648-99e9-bc6d124d3890">
 <br><br>
 
-#### 💳 주문
+#### 🙋‍♂️ 주문
 <img src="https://github.com/user-attachments/assets/5e41a1f7-e3be-43c5-8a25-c20715f7eec5">
 <br><br>
 
-#### 💳 장바구니 담기
+#### 🛒 장바구니 담기
 <img src="https://github.com/user-attachments/assets/c4aa2df4-cc6a-42f6-9ed6-9f7c11082eda">
 <br><br>
 
@@ -156,9 +169,14 @@ PW: Qwer1234!
 <img src="https://github.com/user-attachments/assets/49521164-27d7-4654-9793-4ca9ed519347">
 <br><br> 
 
+#### 💸 결제 처리
 
-
+<img src="https://github.com/user-attachments/assets/7372fa4b-583f-464d-a086-96868b9c415b">
+<br><br> 
  
+
+---
+
 
 
 
