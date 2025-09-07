@@ -21,7 +21,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/payment")
+@RequestMapping("/api/payment")
 @RequiredArgsConstructor
 @Slf4j
 @Tag(name = "결제 기능")

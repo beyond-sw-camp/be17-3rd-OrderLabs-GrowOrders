@@ -34,7 +34,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/farms")
+@RequestMapping("/api/farms")
 public class FarmController {
     private final FarmService farmservice;
 

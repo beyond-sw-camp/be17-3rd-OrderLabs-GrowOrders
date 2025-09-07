@@ -8,6 +8,7 @@ import org.example.groworders.domain.users.service.OAuth2UserService;
 import org.example.groworders.domain.users.service.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -40,36 +41,41 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, UserService userService) throws Exception {
 
-        // JWT 로그인 필터
-        LoginFilter loginFilter = new LoginFilter(configuration.getAuthenticationManager(), userService);
-        loginFilter.setFilterProcessesUrl("/login"); // JWT 로그인 전용 URL
+        AuthenticationManager authenticationManager = configuration.getAuthenticationManager();
+
+        // 커스텀 로그인 필터 (JSON 로그인 처리)
+        LoginFilter loginFilter = new LoginFilter(authenticationManager, userService);
+        loginFilter.setFilterProcessesUrl("/api/login");
 
         http
+                // CSRF / 기본 로그인 / 기본 로그아웃 모두 비활성화
+                .csrf(AbstractHttpConfigurer::disable)
+                .httpBasic(AbstractHttpConfigurer::disable)
+                .formLogin(AbstractHttpConfigurer::disable)
+                .logout(AbstractHttpConfigurer::disable)
+
+                // 권한 설정
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/login", "/api/auth/**", "/api/users/**", "/api/swagger-ui/**").permitAll()
+                        .requestMatchers("/test/**").hasRole("USER")
+                        .requestMatchers("/api/order/**", "/api/payment/**", "/api/cart/**", "/ws/**").authenticated()
+                        .requestMatchers("/api/crops/**", "/api/inventories/**", "/api/farms/**").authenticated()
+                        .anyRequest().permitAll()
+                )
+
                 // OAuth2 로그인 설정
                 .oauth2Login(oauth -> oauth
-                        .loginPage("/login/oauth2") // 일반 로그인 페이지와 분리
+                        .loginPage("/api/login/oauth2")
                         .userInfoEndpoint(endpoint -> endpoint.userService(oAuth2UserService))
                         .successHandler(oAuth2AuthenticationSuccessHandler)
                 )
 
-                // 권한 설정
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**", "/user/signup").permitAll()
-                        .requestMatchers("/test/**").hasRole("USER")
-                        .requestMatchers("/order/**", "/payment/**", "/cart/**", "/ws/**").permitAll()
-                        .requestMatchers("/crops/**", "/inventories/**", "/farms/**").permitAll()
-                        .anyRequest().permitAll()
-                )
+                // CORS
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()));
 
-                // CORS / CSRF / 기타 설정
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .csrf(AbstractHttpConfigurer::disable)
-                .httpBasic(AbstractHttpConfigurer::disable)
-                .formLogin(AbstractHttpConfigurer::disable);
-
-        // 필터 순서
-        http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class); // JWT 인증
-        http.addFilterAt(loginFilter, UsernamePasswordAuthenticationFilter.class); // JWT 로그인 처리
+        // 필터 순서: 커스텀 로그인 → JWT 인증
+        http.addFilterBefore(loginFilter, UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
@@ -78,9 +84,15 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowCredentials(true);
-        configuration.setAllowedOrigins(List.of("http://localhost:8081", "http://localhost:5173"));
+        configuration.setAllowedOrigins(List.of(
+                "https://www.be17.site",   // CloudFront 프론트
+                "https://api.be17.site",   // API 도메인
+                "http://localhost:8081",   // Vue dev server
+                "http://localhost:5173"    // Vite dev server
+        ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
+        configuration.setExposedHeaders(List.of("*"));
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);

@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/predict")
+@RequestMapping("/api/predict")
 @RequiredArgsConstructor
 @Tag(name = "생산량 예측 기능")
 public class PredictionController {
@@ -39,7 +39,7 @@ public class PredictionController {
     public ResponseEntity<PredictionDto.Response> predictDaily(@RequestBody PredictionDto.RequestDaily request) {
         try {
             // Weather API 호출
-            WeatherDto.WeatherData weather = restTemplate.getForObject("http://localhost:8080/weather", WeatherDto.WeatherData.class);
+            WeatherDto.WeatherData weather = restTemplate.getForObject("https://www.be17.site/api/weather", WeatherDto.WeatherData.class);
             PredictionDto.Response response = predictionService.predictDaily(
                     request.getCropName(),
                     request.getCultivationType(),

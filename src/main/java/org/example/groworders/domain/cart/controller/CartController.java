@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cart")
+@RequestMapping("/api/cart")
 @RequiredArgsConstructor
 @Tag(name = "장바구니 기능")
 public class CartController {
@@ -51,7 +51,7 @@ public class CartController {
         return ResponseEntity.ok("장바구니에 등록되었습니다. cart_id : " + createdId);
     }
 
-    /**
+    /**0
      * 내 장바구니 리스트
      */
     @Operation(

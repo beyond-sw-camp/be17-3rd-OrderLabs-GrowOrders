@@ -18,7 +18,7 @@ import java.sql.SQLException;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 @Tag(name = "회원 기능")
 public class UserController {
 

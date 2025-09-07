@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/weather")
+@RequestMapping("/api/weather")
 @RequiredArgsConstructor
 @Tag(name = "날씨 기능")
 public class WeatherController {

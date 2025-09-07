@@ -24,7 +24,7 @@ import java.util.Objects;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/crops")
+@RequestMapping("/api/crops")
 @Tag(name = "작물 관리 기능")
 public class CropController {
     private final CropService cropService;
@@ -46,7 +46,7 @@ public class CropController {
         Crop crop = cropService.register(dto);
 
         /** 예측 생산량 직접 호출 */
-        WeatherDto.WeatherData weather = restTemplate.getForObject("http://localhost:8080/weather", WeatherDto.WeatherData.class); // Weather API 호출
+        WeatherDto.WeatherData weather = restTemplate.getForObject("https://www.be17.site/api/weather", WeatherDto.WeatherData.class); // Weather API 호출
         PredictionDto.RequestDaily requestDaily = cropService.transform(crop);
         PredictionDto.Response prediction = predictionService.predictDaily(requestDaily.getCropName(), requestDaily.getCultivationType(), requestDaily.getGrowthStage(), weather);
 

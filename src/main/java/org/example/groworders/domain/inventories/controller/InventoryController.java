@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/inventories")
+@RequestMapping("/api/inventories")
 @Tag(name = "재고 관리 기능")
 public class InventoryController {
     private final InventoryService inventoryService;

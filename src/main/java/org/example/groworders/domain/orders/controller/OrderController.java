@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/api/order")
 @RequiredArgsConstructor
 @Tag(name = "주문 기능")
 public class OrderController {
