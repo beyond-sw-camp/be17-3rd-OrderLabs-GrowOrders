@@ -50,6 +50,20 @@ PW: Qwer1234!
 
 <br><br>
 
+🐟 농부 사용자 예상 흐름도
+
+```
+농장 등록 ➡️ 생물 등록 ➡️ 재고 관리에서 확인
+```
+
+🦐 구매자 사용자 예상 흐름도
+
+```
+상품 검색 ➡️ 상품 목록 확인 ➡️ 주문 ➡️ 장바구니 ➡️ 결제
+```
+
+<br><br>
+
 ## 🕵️ 팀원 소개
 <br>
 <div align="center">
@@ -82,24 +96,27 @@ PW: Qwer1234!
 </div>
 <br><br>
 
-## ⚾ 시스템 아키텍처
+## ⚾ 시스템 아키텍처 [wiki🔗](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/1.-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98#%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98---%EB%AA%A8%EB%86%80%EB%A6%AC%EC%8B%9D)
+
 <br>
 
-[시스템 아키텍처](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/1.-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98#%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98---%EB%AA%A8%EB%86%80%EB%A6%AC%EC%8B%9D)
+![시스템 아키텍처](https://github.com/user-attachments/assets/1494b5ae-def8-4651-9860-0d43d639791e)
 
 <br><br>
 
-## 🏀 소프트웨어 아키텍처
+## 🏀 소프트웨어 아키텍처 [wiki🔗](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/2.--%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98)
+
 <br>
 
-[소프트웨어 아키텍처](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/2.--%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98)
+![alt](https://github.com/user-attachments/assets/65562918-c539-4930-a19a-37885dbf1c18)
 
 <br><br>
 
-## 📊 성능 테스트
+ ## 📈 기능 개선 [wiki🔗](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/3.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B0%8F-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EC%84%A0-%EC%82%AC%ED%95%AD#%EC%9E%AC%EA%B3%A0-%EB%AA%A9%EB%A1%9D-%EC%A1%B0%ED%9A%8C)
+
 <br>
 
-[성능 테스트 후 개선 사항](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/3.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%B0%8F-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%9B%84-%EA%B0%9C%EC%84%A0-%EC%82%AC%ED%95%AD#%EC%9E%AC%EA%B3%A0-%EB%AA%A9%EB%A1%9D-%EC%A1%B0%ED%9A%8C)
+[![반정규화 테스트 결과](https://github.com/user-attachments/assets/50fa2ca7-4050-4af6-81f7-6a4c49e90d7c)](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/4.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8)
 
 <br><br>
 
@@ -110,16 +127,13 @@ PW: Qwer1234!
 
 <br><br>
 
-## 📺 기능 테스트
-<br>
-
-[기능 테스트](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/4.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8)
-
-<br><br>
-
 ## 🚀 추후 아키텍쳐 개선 예정 (MSA; 헥사고날)
 
 ![헥사고날](https://github.com/user-attachments/assets/3f41c080-9f93-46c3-9492-32af3834f32e)
+
+<br><br>
+
+ ## 📺 기능단위 테스트 화면 [wiki🔗](https://github.com/beyond-sw-camp/be17-3rd-OrderLabs-GrowOrders/wiki/4.-%EA%B8%B0%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8)
 
 <br>
 
@@ -173,7 +187,6 @@ PW: Qwer1234!
 
 <img src="https://github.com/user-attachments/assets/be5308b2-6b43-4f6e-84cb-9606540be762">
 <br><br> 
- 
 
 ---
 
