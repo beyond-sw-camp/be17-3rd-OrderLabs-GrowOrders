@@ -171,7 +171,7 @@ PW: Qwer1234!
 
 #### 💸 결제 처리
 
-<img src="https://github.com/user-attachments/assets/7372fa4b-583f-464d-a086-96868b9c415b">
+<img src="https://github.com/user-attachments/assets/be5308b2-6b43-4f6e-84cb-9606540be762">
 <br><br> 
  
 
